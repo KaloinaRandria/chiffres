@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace chiffre.Models;
 
 public class Chiffre
@@ -15,5 +17,12 @@ public class Chiffre
             valiny[i-1] = RandomNumber(number);
         }
         return valiny;
+    }
+
+    public static double EvaluateExpression(string expression)
+    {
+        DataTable dataTable = new DataTable();
+        var value = dataTable.Compute(expression, String.Empty);
+        return Convert.ToDouble(value);
     }
 }
