@@ -22,7 +22,7 @@ public class Chiffre
     public static double EvaluateExpression(string expression)
     {
         DataTable dataTable = new DataTable();
-        var value = dataTable.Compute(expression, String.Empty);
+        var value = dataTable.Compute(expression, string.Empty);
         return Convert.ToDouble(value);
     }
 }
