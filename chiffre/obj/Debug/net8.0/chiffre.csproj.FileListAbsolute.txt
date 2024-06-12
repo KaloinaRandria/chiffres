@@ -88,3 +88,34 @@ E:/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/obj/Debug/net8.0/ref/chiffre.dll
 /home/kaloina/Documents/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/obj/Debug/net8.0/chiffre.pdb
 /home/kaloina/Documents/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/obj/Debug/net8.0/chiffre.genruntimeconfig.cache
 /home/kaloina/Documents/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/obj/Debug/net8.0/ref/chiffre.dll
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/appsettings.Development.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/appsettings.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/chiffre.staticwebassets.runtime.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/chiffre
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/chiffre.deps.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/chiffre.runtimeconfig.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/chiffre.dll
+/home/kaloina/Documents/GitHub/chiffres/chiffre/bin/Debug/net8.0/chiffre.pdb
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.GeneratedMSBuildEditorConfig.editorconfig
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.AssemblyInfoInputs.cache
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.AssemblyInfo.cs
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.csproj.CoreCompileInputs.cache
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.MvcApplicationPartsAssemblyInfo.cache
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.RazorAssemblyInfo.cache
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.RazorAssemblyInfo.cs
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.sourcelink.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets.build.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets.development.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets/msbuild.chiffre.Microsoft.AspNetCore.StaticWebAssets.props
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets/msbuild.build.chiffre.props
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.chiffre.props
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.chiffre.props
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/staticwebassets.pack.json
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/scopedcss/bundle/chiffre.styles.css
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/scopedcss/projectbundle/chiffre.bundle.scp.css
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.dll
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/refint/chiffre.dll
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.pdb
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/chiffre.genruntimeconfig.cache
+/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/Debug/net8.0/ref/chiffre.dll

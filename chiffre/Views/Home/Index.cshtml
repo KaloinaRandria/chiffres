@@ -12,7 +12,11 @@
 </div>
 
 <div class="text-center mt-3 list-group">
-    <div class="list-group-item" ng-repeat="chiffre in randomSeven track by $index">
-        <p>{{ chiffre }}</p>
-    </div>
+    <table class="table">
+        <tr>
+            <td ng-repeat="chiffre in randomSeven track by $index">{{ chiffre }}</td>
+        </tr>
+    </table>
 </div>
+
+

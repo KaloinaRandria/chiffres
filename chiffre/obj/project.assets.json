@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kaloina/Documents/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/chiffre.csproj",
+      "projectUniqueName": "/home/kaloina/Documents/GitHub/chiffres/chiffre/chiffre.csproj",
       "projectName": "chiffre",
-      "projectPath": "/home/kaloina/Documents/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/chiffre.csproj",
+      "projectPath": "/home/kaloina/Documents/GitHub/chiffres/chiffre/chiffre.csproj",
       "packagesPath": "/home/kaloina/.nuget/packages/",
-      "outputPath": "/home/kaloina/Documents/dev (ITU)/L2/S4/Prog Project/chiffre/chiffre/obj/",
+      "outputPath": "/home/kaloina/Documents/GitHub/chiffres/chiffre/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/kaloina/.nuget/NuGet/NuGet.Config"
