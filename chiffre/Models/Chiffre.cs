@@ -19,10 +19,10 @@ public class Chiffre
         return valiny;
     }
 
-    public static double EvaluateExpression(string expression)
+    public static int EvaluateExpression(string expression)
     {
         DataTable dataTable = new DataTable();
         var value = dataTable.Compute(expression, string.Empty);
-        return Convert.ToDouble(value);
+        return Convert.ToInt32(value);
     }
 }

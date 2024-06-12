@@ -1,6 +1,25 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    .bordered-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 300px; /* Adjust the width as needed */
+        position: absolute;
+    }
+    .left-box {
+        left: 300px;
+        top: auto;
+        border-radius: 10px;
+    }
+
+    .right-box {
+        right: 300px;
+        top: auto;
+        border-radius: 10px;
+    }
+</style>
 
 <div class="text-center">
     <h1 class="display-4">{{ title }}</h1>
@@ -11,12 +30,38 @@
     <div class="mt-3"><button class="btn btn-primary" ng-click="startGame()">Lancer le Jeu</button></div>
 </div>
 
-<div class="text-center mt-3 list-group">
+<div class="text-center mt-5 list-group">
     <table class="table">
         <tr>
-            <td ng-repeat="chiffre in randomSeven track by $index">{{ chiffre }}</td>
+            <td ng-repeat="chiffre in randomSeven track by $index"><h5>{{ chiffre }}</h5></td>
         </tr>
     </table>
 </div>
+
+<div class="mt-3 form-control-plaintext bordered-box left-box">
+    <div class="mt-3">
+        <h4 class="text-center">Joueur 1</h4>
+    </div>
+    <form>
+        <input class="mt-3 form-control" type="text" placeholder="Entrer un nombre"/>
+        <div class="mt-3">
+            <input type="submit" value="valider" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>
+
+<div class="mt-3 form-control-plaintext bordered-box right-box">
+    <div class="mt-3">
+        <h4 class="text-center">Joueur 2</h4>
+    </div>
+    <form>
+        <input class="mt-3 form-control" type="text" placeholder="Entrer un nombre"/>
+        <div class="mt-3">
+            <input type="submit" value="valider" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>
+
+
 
 
