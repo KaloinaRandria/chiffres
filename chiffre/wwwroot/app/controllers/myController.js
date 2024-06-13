@@ -1,6 +1,6 @@
 app.controller('MyController',function ($scope,MyService){
     $scope.message="HELLO EVERYONE JS";
-    $scope.randomNumber = 100;
+    $scope.randomNumber=-1;
     $scope.randomSeven = [];
     $scope.getMessage = function () {
         MyService.getMessage().then(
