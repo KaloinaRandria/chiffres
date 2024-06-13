@@ -19,17 +19,39 @@
         top: auto;
         border-radius: 10px;
     }
+    .launcher {
+        float: left;
+        margin: auto;
+        position: absolute;
+    }
+    .quit {
+        position: absolute;
+        margin-left: 10%;
+    }
+    .jeu {
+        margin-top:15%;
+    }
+    .nombre {
+        color: #173369;
+    }
+    .time {
+        margin-left: 90%;
+    }
 </style>
 
 <div class="text-center">
     <h1 class="display-4">{{ title }}</h1>
 </div>
-
-<div class="mt-3 text-center"><button class="btn btn-primary" ng-click="startGame()">Lancer le Jeu</button></div>
-
-<div class="container" ng-if="aleatoire != -1">
-    <div class="mt-3">
-        <h3 class="display-4">Prediction : {{ randomNumber }}</h3>
+<div class="col mt-5">
+    <div class="mt-3 launcher"><button class="btn btn-success" ng-click="startGame()">Lancer le Jeu</button></div>
+    <div class="mt-3 quit"><button class="btn btn-outline-danger" ng-click="endGame()">Quitter le Jeu</button></div>
+</div>
+<div class="mt-5 text-center time">
+    <h5 class="titleTemps">Time : </h5><h1 class="temps" >{{ timer }}</h1>
+</div>
+<div class="container jeu" ng-if="randomNumber != -1">
+    <div class="mt-3 text-center">
+        <h5>Nombre a predir : </h5><h3 class="display-4"><span class="modal-title nombre">{{ randomNumber }}</span></h3>
     </div>
 
     <div class="text-center mt-5 list-group">
@@ -40,28 +62,24 @@
         </table>
     </div>
 
-    <div class="mt-3 form-control-plaintext bordered-box left-box">
+    <div class="mt-5 form-control-plaintext bordered-box left-box">
         <div class="mt-3">
             <h4 class="text-center">Joueur 1</h4>
         </div>
-        <form>
             <input class="mt-3 form-control" type="text" placeholder="Entrer un nombre"/>
             <div class="mt-3">
                 <input type="submit" value="valider" class="btn btn-primary"/>
             </div>
-        </form>
     </div>
 
-    <div class="mt-3 form-control-plaintext bordered-box right-box">
+    <div class="mt-5 form-control-plaintext bordered-box right-box">
         <div class="mt-3">
             <h4 class="text-center">Joueur 2</h4>
         </div>
-        <form>
             <input class="mt-3 form-control" type="text" placeholder="Entrer un nombre"/>
             <div class="mt-3">
                 <input type="submit" value="valider" class="btn btn-primary"/>
             </div>
-        </form>
     </div>    
 </div>
 
