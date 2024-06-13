@@ -41,18 +41,4 @@ public class Joueur
         }
         return toReturn;
     }
-
-    public bool CommonNumber(Joueur[] joueurs)
-    {
-        HashSet<int> numbers = new HashSet<int>();
-        for (int i = 0; i < joueurs.Length; i++)
-        {
-            if (numbers.Contains(joueurs[i].Nombre))
-            {
-                return true;
-            }
-            numbers.Add(joueurs[i].Nombre);
-        }
-        return false;
-    }
 }
