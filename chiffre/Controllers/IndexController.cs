@@ -36,7 +36,7 @@ public class IndexController : ControllerBase
     }
 
     [HttpGet("genererJoueur")]
-    public ActionResult<IEnumerable<Joueur>> GenererJoueurController()
+    public IActionResult GenererJoueurController()
     {
         List<Joueur> joueurs = Joueur.GenererJoueur();
         var data = new  { j = joueurs };

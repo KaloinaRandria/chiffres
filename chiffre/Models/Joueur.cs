@@ -41,4 +41,30 @@ public class Joueur
         }
         return toReturn;
     }
+
+    public int GetJoueurById(int id , Joueur[] joueurs)
+    {
+        for (int i = 0; i < joueurs.Length; i++)
+        {
+            if (joueurs[i].Id == id)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public bool CheckJoueurSiMiser(Joueur[] joueurs)
+    {
+        for (int i = 0; i < joueurs.Length; i++)
+        {
+            if (joueurs[i].Nombre == -1)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
 }

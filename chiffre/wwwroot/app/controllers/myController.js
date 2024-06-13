@@ -6,6 +6,8 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     $scope.timer = 60;
     $scope.listJoueur = [];
     $scope.timeOut = "";
+    $scope.validation= "";
+    $scope.canVerify= -1; 
     $scope.getMessage = function () {
         MyService.getMessage().then(
             function (response) {
@@ -52,6 +54,24 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         console.log($scope.randomNumber);
     }
     
+    $scope.j1Response = function () {
+        let choice = -1;
+        if (document.querySelector('#number_1').value != "")
+        {
+            choice=document.querySelector('#number_1').value;
+        }
+        if ($scope.validation =="")
+        {
+            $scope.validation = "1_"+choice;
+        }
+        else
+        {
+            $scope.validation += "&1_"+choice;
+            $scope.canVerify = 1;
+        }
+        document.querySelector('#number_1').value = choice;
+        document.querySelector('#number_1').readOnly = true;
+    };
     
     $scope.title="DES LETTRES ET DES CHIFFRES";
     $scope.getMessage();
