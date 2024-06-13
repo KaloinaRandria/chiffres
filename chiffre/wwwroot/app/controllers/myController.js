@@ -14,16 +14,16 @@ app.controller('MyController',function ($interval,$scope,MyService){
         )
     }
     
-   
+    $scope.startTime = $interval(function () {
+        if ($scope.timer > 0 && $scope.randomNumber != -1) {
+            $scope.timer--;
+        } else {
+            $interval.cancel($scope.startTime);
+        }
+    },1000);
     
     $scope.startGame = function () {
-        $scope.startTime = $interval(function () {
-            if ($scope.timer > 0 && $scope.randomNumber != -1) {
-                $scope.timer--;
-            } else {
-                $interval.cancel($scope.startTime);
-            }
-        },1000); 
+        $scope.startTime;   
         
         MyService.genererJoueurService($scope.nbJoueur).then(
             function (response) {
