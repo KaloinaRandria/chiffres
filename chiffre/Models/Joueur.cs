@@ -3,7 +3,7 @@ namespace chiffre.Models;
 public class Joueur
 {
     private int Id { get; set; }
-    private string name { get; set; }
+    private string Nom { get; set; }
     private int Nombre { get; set; }
 
     public Joueur(int id, int nombre)
@@ -24,10 +24,10 @@ public class Joueur
         return joueurs;
     }
 
-    public Joueur(int id, string name, int nombre)
+    public Joueur(int id, string nom, int nombre)
     {
         Id = id;
-        this.name = name;
+        this.Nom = nom;
         Nombre = nombre;
     }
 

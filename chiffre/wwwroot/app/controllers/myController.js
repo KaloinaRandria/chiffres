@@ -4,6 +4,7 @@ app.controller('MyController',function ($interval,$scope,MyService){
     $scope.randomSeven = [];
     $scope.timer = 60;
     $scope.nbJoueur = 2;
+    $scope.listJoueur = [];
     $scope.getMessage = function () {
         MyService.getMessage().then(
             function (response) {
@@ -12,26 +13,40 @@ app.controller('MyController',function ($interval,$scope,MyService){
             }
         )
     }
+    
     $scope.startTime = $interval(function () {
         if ($scope.timer > 0 && $scope.randomNumber != -1) {
             $scope.timer--;
         } else {
-            $interval.cancel(intervalPromise);
+            $interval.cancel($scope.startTime);
         }
     },1000);
+    
     $scope.startGame = function () {
-        $scope.startTime;
+        $scope.startTime;   
+        
+        MyService.genererJoueurService($scope.nbJoueur).then(
+            function (response) {
+                $scope.listJoueur = response.data.j;
+            }
+        ).catch(function (error) {
+            console.error("Error : " + error);
+        });
         MyService.getRandomNumberService().then(
             function (response) {
                 $scope.randomNumber = response.data.nb;
             }
-        );
+        ).catch(function (error) {
+            console.error("Error : " + error);
+        });
         MyService.getRandomSevenNumberService().then(
             function (response) {
                 $scope.randomSeven = response.data.sevenNb;
                 console.log($scope.randomSeven);
             }
-        );
+        ).catch(function (error) {
+            console.error("Error : " + error);
+        });
     }
     $scope.endGame = function () {
         $scope.timer = 60;
