@@ -31,7 +31,7 @@ public class Joueur
         Nombre = nombre;
     }
 
-    public static List<Joueur> GenererJoueur()
+    public Joueur[] GenererJoueur()
     {
         List<Joueur> toReturn = new List<Joueur>();
         for (int i = 0; i < 2; i++)
@@ -39,7 +39,7 @@ public class Joueur
             int id = i + 1;
             toReturn.Add(new Joueur(id , "Joueur " + id , -1));
         }
-        return toReturn;
+        return toReturn.ToArray();
     }
 
     public int GetJoueurById(int id , Joueur[] joueurs)
@@ -65,6 +65,54 @@ public class Joueur
         }
 
         return false;
+    }
+
+    public int JoueurTour(Joueur[] joueurs)
+    {
+        if (new Joueur().CheckJoueurSiMiser(joueurs))
+        {
+            return -1;
+        }
+
+        return joueurs[0].Id;
+    }
+
+    public int GetAutreIdJoueur(int id , Joueur[] joueurs)
+    {
+        for (int i = 0; i < joueurs.Length; i++)
+        {
+            if (joueurs[i].Id != id)
+            {
+                return joueurs[i].Id;
+            }
+        }
+
+        return id;
+    }
+
+    public Joueur[] JoueurValiderChoix(string validation , string nombre)
+    {
+        Joueur joueur = new Joueur();
+        String[] valeurs = validation.Split("&");
+        Joueur[] joueurs = joueur.GenererJoueur();
+        for (int i = 0; i < valeurs.Length; i++)
+        {
+            int idJoueur = Convert.ToInt32(valeurs[i].Split("_")[0]);
+            int tempNumber = Convert.ToInt32(valeurs[i].Split("_")[1]);
+            joueurs[joueur.GetJoueurById(idJoueur, joueurs.ToArray())].Nombre = tempNumber;
+        }
+
+        joueurs = joueur.NombrePrediParJoueur(Convert.ToInt32(nombre), joueurs);
+        return joueurs;
+    }
+
+    public int GetGagnant(string validation ,string nombre , string combinaison , string sevenNumberJson)
+    {
+        Joueur joueur = new Joueur();
+        Joueur[] joueurs = joueur.JoueurValiderChoix(validation, nombre);
+        int gagnant = joueur.GetAutreIdJoueur(joueur.JoueurTour(joueurs), joueurs);
+        
+        return gagnant;
     }
     
 }
