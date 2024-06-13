@@ -52,6 +52,7 @@ public class IndexController : ControllerBase
         return Ok(data);
     }
 
+    [HttpGet("checkCombinaison/{validation}/{number}/{combinaison}/{sevenRandomJson}")]
     public IActionResult CheckCombinaison([FromRoute] string validation , [FromRoute] string number , [FromRoute] string combinaison , [FromRoute] string sevenRandomJson)
     {
         int gagnant = new Joueur().GetGagnant(validation, number, combinaison, sevenRandomJson.Trim());

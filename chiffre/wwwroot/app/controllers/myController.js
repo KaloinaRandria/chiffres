@@ -7,7 +7,9 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     $scope.listJoueur = [];
     $scope.timeOut = "";
     $scope.validation= "";
-    $scope.canVerify= -1; 
+    $scope.canVerify= -1;
+    $scope.tour = -1;
+    $scope.winner = -1;
     $scope.getMessage = function () {
         MyService.getMessage().then(
             function (response) {
@@ -71,8 +73,64 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         }
         document.querySelector('#number_1').value = choice;
         document.querySelector('#number_1').readOnly = true;
+        
+        $http.get(`${baseURL}/index/reponseEnvoye/` + $scope.validation +'/'+ $scope.randomNumber).then(
+            function (response) {
+                $scope.listJoueur = response.data.players;
+                $scope.tour = response.data.tour;
+            }
+        )
     };
     
+    $scope.j2Response = function () {
+        let choice = -1;
+        if (document.querySelector('#number_2').value != "")
+        {
+            choice=document.querySelector('#number_2').value;
+        }
+        if ($scope.validation =="")
+        {
+            $scope.validation = "2_"+choice;
+        }
+        else
+        {
+            $scope.validation += "&2_"+choice;
+            $scope.canVerify = 1;
+        }
+
+        document.querySelector('#number_2').value = choice;
+        document.querySelector('#number_2').readOnly = true;
+        
+        $http.get(`${baseURL}/index/reponseEnvoye/` + $scope.validation +'/'+ $scope.randomNumber).then(
+            function (response) {
+                $scope.listJoueur = response.data.players;
+                $scope.tour = response.data.tour;
+            }
+        )
+    }
+    $scope.check = function () {
+        var combinaison = document.querySelector('#combinaison').value;
+        $http.get(`${baseURL}/Index/checkCombinaison/` + $scope.validation +'/'+ $scope.randomNumber +'/'+ combinaison +'/'+ JSON.stringify($scope.randomSeven)).then(
+            function (response) {
+                $scope.winner = response.data.winner;
+            }
+        )
+    }
+    $scope.stop = function () {
+        $scope.countDown = 60;
+        $scope.vainqueur = -1;
+        $scope.number = -1;
+        $scope.listeNumbers = [];
+        $scope.players = [];
+        $scope.tour = -1;
+        $scope.canVerify = -1;
+        $scope.validation = "";
+    };
+    
+    $scope.shoWinner = function (winner) {
+        alert("The Winner is " + winner);
+        $scope.stop();
+    }
     $scope.title="DES LETTRES ET DES CHIFFRES";
     $scope.getMessage();
 });
