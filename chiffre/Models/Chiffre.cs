@@ -25,4 +25,6 @@ public class Chiffre
         var value = dataTable.Compute(expression, string.Empty);
         return Convert.ToInt32(value);
     }
+    
+    
 }
