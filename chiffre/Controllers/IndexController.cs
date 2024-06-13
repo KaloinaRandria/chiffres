@@ -42,4 +42,20 @@ public class IndexController : ControllerBase
         var data = new  { j = joueurs };
         return Ok(data);
     }
+    
+    [HttpGet("reponseEnvoye/{validation}/{number}")]
+    public IActionResult ReponseEnvoye([FromRoute] string validation , [FromRoute] string number)
+    {
+        Joueur joueur = new Joueur();
+        Joueur[] joueurs = joueur.JoueurValiderChoix(validation, number);
+        var data = new { players = joueurs, tour = joueur.JoueurTour(joueurs) };
+        return Ok(data);
+    }
+
+    public IActionResult CheckCombinaison([FromRoute] string validation , [FromRoute] string number , [FromRoute] string combinaison , [FromRoute] string sevenRandomJson)
+    {
+        int gagnant = new Joueur().GetGagnant(validation, number, combinaison, sevenRandomJson.Trim());
+        var data = new { winner = gagnant };
+        return Ok(data);
+    }
 }
