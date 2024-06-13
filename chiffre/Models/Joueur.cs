@@ -31,10 +31,10 @@ public class Joueur
         Nombre = nombre;
     }
 
-    public static List<Joueur> GenererJoueur(int nbJoueurs)
+    public static List<Joueur> GenererJoueur()
     {
         List<Joueur> toReturn = new List<Joueur>();
-        for (int i = 0; i < nbJoueurs; i++)
+        for (int i = 0; i < 2; i++)
         {
             int id = i + 1;
             toReturn.Add(new Joueur(id , "Joueur " + id , -1));
