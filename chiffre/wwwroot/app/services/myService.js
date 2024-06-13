@@ -10,5 +10,8 @@ app.factory('MyService',function ($http){
     service.getRandomSevenNumberService = function () {
         return $http.get(`${baseURL}/index/sevenRandom`);
     }
+    service.genererJoueurService = function (nbPlayer) {
+        return $http.get(`${baseURL}/index/genererJoueur/` + nbPlayer);
+    }
     return service;
 });

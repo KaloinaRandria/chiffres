@@ -34,4 +34,12 @@ public class IndexController : ControllerBase
         var data = new { sevenNb = new Chiffre().RandomSevenNumber(100,7) };
         return Ok(data);
     }
+
+    [HttpGet("genererJoueur/{nbJoueur}")]
+    public ActionResult<IEnumerable<Joueur>> GenererJoueurController(int nbJoueur)
+    {
+        List<Joueur> joueurs = Joueur.GenererJoueur(nbJoueur);
+        var data = new  { j = joueurs };
+        return Ok(data);
+    }
 }

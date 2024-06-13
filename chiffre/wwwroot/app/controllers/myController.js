@@ -3,6 +3,7 @@ app.controller('MyController',function ($interval,$scope,MyService){
     $scope.randomNumber=-1;
     $scope.randomSeven = [];
     $scope.timer = 60;
+    $scope.nbJoueur = 2;
     $scope.getMessage = function () {
         MyService.getMessage().then(
             function (response) {

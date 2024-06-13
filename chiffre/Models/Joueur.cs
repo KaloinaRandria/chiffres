@@ -31,7 +31,7 @@ public class Joueur
         Nombre = nombre;
     }
 
-    public List<Joueur> GenererJoueur(int nbJoueurs)
+    public static List<Joueur> GenererJoueur(int nbJoueurs)
     {
         List<Joueur> toReturn = new List<Joueur>();
         for (int i = 0; i < nbJoueurs; i++)
