@@ -111,7 +111,18 @@ public class Joueur
         Joueur joueur = new Joueur();
         Joueur[] joueurs = joueur.JoueurValiderChoix(validation, nombre);
         int gagnant = joueur.GetAutreIdJoueur(joueur.JoueurTour(joueurs), joueurs);
-        
+        List<int> sevenRandom = new Chiffre().ExtractionNombre(sevenNumberJson);
+        List<int> combinaisons = new Chiffre().ExtractionNombre(combinaison);
+        if (new Chiffre().CheckCombinaison(combinaisons,sevenRandom) == false)
+        {
+            return gagnant;
+        }
+
+        int valueCombinaison = new Chiffre().EvaluateExpression(combinaison);
+        if (valueCombinaison == joueurs[0].Nombre)
+        {
+            gagnant = joueur.JoueurTour(joueurs);
+        }
         return gagnant;
     }
     

@@ -20,7 +20,7 @@ public class Chiffre
         return valiny;
     }
 
-    public static int EvaluateExpression(string expression)
+    public int EvaluateExpression(string expression)
     {
         DataTable dataTable = new DataTable();
         var value = dataTable.Compute(expression, string.Empty);
