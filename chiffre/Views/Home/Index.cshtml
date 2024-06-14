@@ -84,8 +84,7 @@
 
     <div class="mt-5 text-center" id="verify">
         <div>
-            <p ng-if=" tour!=-1 ">Tour : Joueur {{ tour }}</p>
-            <p ng-if=" tour==-1 ">Tour : Pas de tour</p>
+            <p ng-if=" tour!=-1 ">Preuve de Joueur {{ tour }}</p>
         </div>
         <input type="text" id="combinaison"/>
         <button ng-if=" canVerify == 1 " ng-click="check()" class="btn btn-success">verify</button>

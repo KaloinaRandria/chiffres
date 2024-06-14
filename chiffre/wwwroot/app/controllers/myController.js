@@ -3,7 +3,7 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     $scope.message="HELLO EVERYONE JS";
     $scope.randomNumber=-1;
     $scope.randomSeven = [];
-    $scope.timer = 60;
+    $scope.timer = 10;
     $scope.listJoueur = [];
     $scope.timeOut = "";
     $scope.validation= "";
@@ -53,14 +53,17 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         });
     }
     $scope.endGame = function () {
-        $scope.timer = 60;
-        $scope.color = "black";
-        $scope.winner = -1;
-        $http.get(`${baseURL}/index/number`).then(
-            function (response) {
-                $scope.randomNumber = -1;
+        if ($scope.randomNumber != -1) {
+            let number_1 = document.querySelector('#number_1').value;
+            let number_2 = document.querySelector('#number_2').value;
+            if ($scope.tour == -1 && number_1 == "" && number_2 == "") {
+                $scope.stop();
+            } else {
+                $scope.j1Response();
+                $scope.j2Response();
             }
-        );
+        }
+        $scope.stop();
         console.log($scope.randomNumber);
     }
     
@@ -127,11 +130,11 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         )
     }
     $scope.stop = function () {
-        $scope.countDown = 60;
+        $scope.timer = 60;
         $scope.winner = -1;
-        $scope.number = -1;
-        $scope.listeNumbers = [];
-        $scope.players = [];
+        $scope.randomNumber = -1;
+        $scope.randomSeven = [];
+        $scope.listJoueur = [];
         $scope.tour = -1;
         $scope.canVerify = -1;
         $scope.validation = "";
