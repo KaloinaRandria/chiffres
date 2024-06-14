@@ -3,7 +3,7 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     $scope.message="HELLO EVERYONE JS";
     $scope.randomNumber=-1;
     $scope.randomSeven = [];
-    $scope.timer = 10;
+    $scope.timer = 60;
     $scope.listJoueur = [];
     $scope.timeOut = "";
     $scope.validation= "";
