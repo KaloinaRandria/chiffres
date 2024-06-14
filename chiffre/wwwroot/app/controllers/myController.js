@@ -10,6 +10,7 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     $scope.canVerify= -1;
     $scope.tour = -1;
     $scope.winner = -1;
+    $scope.color = "black";
     $scope.getMessage = function () {
         MyService.getMessage().then(
             function (response) {
@@ -25,6 +26,11 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         $scope.startTime = $interval(function () {
             if ($scope.timer > 0 && $scope.randomNumber != -1) {
                 $scope.timer--;
+                if ($scope.timer <=30 && $scope.timer > 10) {
+                    $scope.color = "orange";    
+                } else if($scope.timer <=10) {
+                    $scope.color = "red";
+                }
             } else {
                 $interval.cancel($scope.startTime);
                 $scope.timeOut = "Temps ecoule !!"
@@ -48,6 +54,8 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     }
     $scope.endGame = function () {
         $scope.timer = 60;
+        $scope.color = "black";
+        $scope.winner = -1;
         $http.get(`${baseURL}/index/number`).then(
             function (response) {
                 $scope.randomNumber = -1;
@@ -69,6 +77,7 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         else
         {
             $scope.validation += "&1_"+choice;
+            $interval.cancel($scope.startTime);
             $scope.canVerify = 1;
         }
         document.querySelector('#number_1').value = choice;
@@ -95,6 +104,7 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         else
         {
             $scope.validation += "&2_"+choice;
+            $interval.cancel($scope.startTime);
             $scope.canVerify = 1;
         }
 
@@ -118,13 +128,14 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     }
     $scope.stop = function () {
         $scope.countDown = 60;
-        $scope.vainqueur = -1;
+        $scope.winner = -1;
         $scope.number = -1;
         $scope.listeNumbers = [];
         $scope.players = [];
         $scope.tour = -1;
         $scope.canVerify = -1;
         $scope.validation = "";
+        $scope.color = "black";
     };
     
     $scope.shoWinner = function () {
@@ -135,7 +146,7 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     //     $scope.endGame();
     //     $scope.startGame();
     // };
-    
+    //
     $scope.title="DES LETTRES ET DES CHIFFRES";
     $scope.getMessage();
     

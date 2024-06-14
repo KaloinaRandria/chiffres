@@ -36,8 +36,8 @@
         display: flex;
         gap: 2em;
     }
-    .timeout {
-        color: #891515;
+    .temps {
+        color: {{ color }};
     }
 </style>
 
@@ -52,10 +52,7 @@
 <div class="mt-5 text-center time">
     <h5 class="titleTemps">Temps : </h5><h1 class="temps" >{{ timer }}</h1>
 </div>
-<div>
-    <p ng-if=" tour!=-1 ">Tour : Joueur {{ tour }}</p>
-    <p ng-if=" tour==-1 ">Tour : Pas de tour</p>
-</div>
+
 <div class="mt-5 text-center" ng-if="timer == 0 ">
     <h3 class="display-4 alert-warning"><span class="modal-title">{{ timeOut }}</span></h3>
 </div>
@@ -86,6 +83,10 @@
     </div>
 
     <div class="mt-5 text-center" id="verify">
+        <div>
+            <p ng-if=" tour!=-1 ">Tour : Joueur {{ tour }}</p>
+            <p ng-if=" tour==-1 ">Tour : Pas de tour</p>
+        </div>
         <input type="text" id="combinaison"/>
         <button ng-if=" canVerify == 1 " ng-click="check()" class="btn btn-success">verify</button>
         <button ng-if=" canVerify == -1 " ng-click="check()" class="btn btn-success" disabled>verify</button>
