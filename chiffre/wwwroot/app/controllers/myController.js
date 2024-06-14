@@ -127,10 +127,16 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
         $scope.validation = "";
     };
     
-    $scope.shoWinner = function (winner) {
-        alert("The Winner is " + winner);
+    $scope.shoWinner = function () {
         $scope.stop();
-    }
+    };
+    
+    // $scope.restartGame = function () {
+    //     $scope.endGame();
+    //     $scope.startGame();
+    // };
+    
     $scope.title="DES LETTRES ET DES CHIFFRES";
     $scope.getMessage();
+    
 });
