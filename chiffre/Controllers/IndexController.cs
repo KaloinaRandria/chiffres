@@ -1,5 +1,6 @@
 using chiffre.Models;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace chiffre.Controllers;
@@ -25,6 +26,20 @@ public class IndexController : ControllerBase
     public IActionResult GetNumberRandom()
     {
         var data = new { nb = new Chiffre().RandomNumber(1000) };
+        return Ok(data);
+    }
+
+    [HttpGet("nb/{number}")]
+    public IActionResult GetNumber([FromRoute] string number)
+    {
+        var data = new { nombre = number };
+        return Ok(data);
+    }
+
+    [HttpGet("nb/{sevenNumberJson}")]
+    public IActionResult GetSevenNumber([FromRoute] string sevenNumberJson)
+    {
+        var data = new { nombreSept = sevenNumberJson };
         return Ok(data);
     }
     

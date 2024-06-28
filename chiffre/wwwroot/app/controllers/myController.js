@@ -11,6 +11,10 @@ app.controller('MyController',function ($interval,$scope,MyService,$http){
     $scope.tour = -1;
     $scope.winner = -1;
     $scope.color = "black";
+    
+    $scope.targetNumber = -1;
+    $scope.sevenNumber = [];
+    
     $scope.getMessage = function () {
         MyService.getMessage().then(
             function (response) {
