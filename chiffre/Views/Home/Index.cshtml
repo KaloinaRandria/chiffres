@@ -57,18 +57,52 @@
     <h3 class="display-4 alert-warning"><span class="modal-title">{{ timeOut }}</span></h3>
 </div>
 <div class="container jeu mt-5" ng-if="randomNumber != -1">
+    @* <div class="mt-3 text-center"> *@
+    @*     <h5>Nombre a predir : </h5><h3 class="display-4"><span class="modal-title nombre">{{ randomNumber }}</span></h3> *@
+    @* </div> *@
+    
+    @* <div class="text-center mt-5 list-group"> *@
+    @*     <table class="table"> *@
+    @*         <tr> *@
+    @*             <td ng-repeat="chiffre in randomSeven track by $index"><h5>{{ chiffre }}</h5></td> *@
+    @*         </tr> *@
+    @*     </table> *@
+    @* </div> *@
+    
     <div class="mt-3 text-center">
-        <h5>Nombre a predir : </h5><h3 class="display-4"><span class="modal-title nombre">{{ randomNumber }}</span></h3>
+        
+            <h5>Nombre a predir : </h5>
+            <h3 class="display-4"><span class="modal-title nombre"><input id="nombre" type="number" min="1" max="1000"/></span></h3>
+            <div class="mt-5 text-center">
+                <button class="btn btn-primary" ng-click="insertNombre()">nombre</button>
+            </div>
+        
     </div>
-
+    <div class="mt-5 text-center"><h3 class="display-4"><span class="modal-title nombre">{{ number }}</span></h3></div>
+    
+    <div class="mt-5 ">
+            <table class="table">
+                <tr>
+                    <td><input type="number" max="1000" min="1" id="i1"/></td>
+                    <td><input type="number" max="1000" min="1" id="i2"/></td>
+                    <td><input type="number" max="1000" min="1" id="i3"/></td>
+                    <td><input type="number" max="1000" min="1" id="i4"/></td>
+                    <td><input type="number" max="1000" min="1" id="i5"/></td>
+                    <td><input type="number" max="1000" min="1" id="i6"/></td>
+                    <td><input type="number" max="1000" min="1" id="i7"/></td>
+                </tr>
+            </table>
+            <div class="mt-5 text-center">
+                <button class="btn btn-primary" ng-click="insertSeven()">sept</button>
+            </div>
+    </div>
     <div class="text-center mt-5 list-group">
         <table class="table">
             <tr>
-                <td ng-repeat="chiffre in randomSeven track by $index"><h5>{{ chiffre }}</h5></td>
+                <td ng-repeat="chiffre in collecteNumbers track by $index" ng-if="collecteNumbers != []"><h5>{{ chiffre }}</h5></td>
             </tr>
         </table>
     </div>
-
     <div class="list-container mt-5">
         <div id="J1" class="bordered-box">
             <p class="mt-3">Joueur 1</p>
@@ -84,7 +118,8 @@
 
     <div class="mt-5 text-center" id="verify">
         <div>
-            <p ng-if=" tour!=-1 ">Preuve de Joueur {{ tour }}</p>
+            <p ng-if=" tour!=-1 ">Tour : Joueur {{ tour }}</p>
+            <p ng-if=" tour==-1 ">Tour : Pas de tour</p>
         </div>
         <input type="text" id="combinaison"/>
         <button ng-if=" canVerify == 1 " ng-click="check()" class="btn btn-success">verify</button>

@@ -9,6 +9,7 @@ public class Chiffre
     {
         return new Random().Next(1, number);
     }
+    
 
     public int[] RandomSevenNumber(int number , int length)
     {
